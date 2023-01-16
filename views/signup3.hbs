@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  {{>head}}
+  <body>
+    {{>navbar}}
+    {{>currState}}
+    <div class="container mt-4">
+        <p style="font-size: 30px; font-weight:500" >Add Drivers</p>
+        <p>Upon Enrolling in the Consortium you can Add All your Active Drivers that have Negative Pre-Employment DOT Drug Test Results and have been in a Random Pool within the Previous 30 Days. DOT Requires a New Pre-Employment Drug Test if a Driver is not in a Random Pool for more than 30 Days.</p>
+        <div class="row mt-5">
+            <div class="col-md-3"><p>First Name</p></div>
+            <div class="col-md-3"><p>Last Name</p></div>
+            <div class="col-md-1"><p>SSN</p></div>
+            <div class="col-md-2"><p>CDL State</p></div>
+            <div class="col-md-2"><p>CDL Number</p></div>
+        </div>
+        <form action="/signup3" method="post">
+            
+            <div>
+                <div>
+                    <div class="row mt-2">
+                        <div class="col-md-3">
+                            <div class="mb-3">
+                                <input type="text" class="form-control"   placeholder="First Name">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="mb-3">
+                                <input type="text" class="form-control"   placeholder="Last Name">
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <div class="mb-3">
+                                <input type="text" class="form-control"   placeholder="SSN">
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="mb-3">
+                                <input type="text" class="form-control"   placeholder="CDL State">
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="mb-3">
+                                <input type="text" class="form-control"   placeholder="DL Number">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-success mb-3" style="width: 100%;" onclick="makeNewDriver(this)" >Click Here to add More Drivers</button>
+            </div>
+            <input type="checkbox" name="" id="" class="me-2" >Click Here to Confirm the Drivers Listed Above have Negative DOT Pre-Employment Drug Test Results - Then Click Finished Adding Drivers below.
+            <p class="mt-3 ms-2">If you are Not Adding Drivers - Click Finished Adding Drivers Below.</p>
+            <button type="submit" class="btn btn-success">Finish Adding Driver</button>
+        </form>
+
+    </div>
+
+
+
+    <div class="container my-5">
+      <hr>
+    </div>
+    {{>footer}}
+    {{>script}}
+    <script>
+        function makeNewDriver(a){
+            var par = a.parentNode.children[0];
+            const node = `<div class="row mt-2">
+                    <div class="col-md-3">
+                        <div class="mb-3">
+                            <input type="text" class="form-control"   placeholder="First Name">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="mb-3">
+                            <input type="text" class="form-control"   placeholder="Last Name">
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <div class="mb-3">
+                            <input type="text" class="form-control"   placeholder="SSN">
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="mb-3">
+                            <input type="text" class="form-control"   placeholder="CDL State">
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="mb-3">
+                            <input type="text" class="form-control"   placeholder="DL Number">
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <button type="button" class="btn btn-danger" onclick="deleteDriver(this)">x</button>
+                    </div>
+                </div>`
+            par.innerHTML+=node;
+        }
+
+        function deleteDriver(a){
+            var par = a.parentNode.parentNode;
+            par.remove();
+        }
+    </script>
+  </body>
+</html>

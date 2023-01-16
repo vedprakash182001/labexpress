@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  {{>head}}
+  <body>
+    {{>navbar}}
+
+    <div class="container">
+        <div class="img1">
+            <img src="/statics/images/1.jpg" alt="Tree Image">
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-8">
+                <p style="font-size:27px">Contact Express Labs DOT Consortium</p>
+                <hr>
+            </div>
+            <div class="col-md-4">
+                <div class="about1 text-center py-3">
+                    <p style="font-weight: 900;  font-size:25px">24/7 Customer Service</p>
+                    <hr>
+                    <p>Call Toll Free</p>
+                    <p style="font-weight: 500;  font-size:25px">800-341-1185</p>
+                </div>
+                <div class="about2 text-center py-3 mt-4">
+                    <p style="font-weight: 900;  font-size:25px">Sign Up Today</p>
+                    <hr>
+                    <p>Only</p>
+                    <p style="font-weight: 500;  font-size:25px">$99 for 1 Year</p>
+                    <form action="/login" method="get">
+                        <button type="button" class="btn btn-success">Join the DOT Consortium</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container my-5">
+      <hr>
+    </div>
+    {{>footer}}
+    {{>script}}
+  </body>
+</html>
