@@ -4,9 +4,125 @@
   <body>
     {{>navbar}}
 
-    {{>currState}}
+    <div class="container mt-3 container1">
+        <div class="box1">
+            <p class="curr1" >1</p>
+            <p style="font-size: 12px;">CONTACT INFO</p>
+        </div>
+        <div class="linebox">
+            <div class="line"></div>
+        </div>
+        <div class="box1">
+            <p class="curr1" >2</p>
+            <p style="font-size: 12px;">MEMBERSHIP</p>
+        </div>
+        <div class="linebox">
+            <div class="line"></div>
+        </div>
+        <div class="box1">
+            <p class="curr1" >3</p>
+            <p style="font-size: 12px;">ADD DRIVERS</p>
+        </div>
+        <div class="linebox">
+            <div class="line"></div>
+        </div>
+        <div class="box1">
+            <p class="curr1a" >4</p>
+            <p style="font-size: 12px;">PAYMENT</p>
+        </div>
+        <div class="linebox">
+            <div class="line"></div>
+        </div>
+        <div class="box1">
+            <p class="curr1" >5</p>
+            <p style="font-size: 12px;">REVIEW</p>
+        </div>
+    </div>
 
-
+    <div class="container">
+        <p style="font-size: 30px; font-weight:500" >Payment Options</p>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+            <label class="form-check-label" for="flexRadioDefault2">
+                <b>Add New Number</b>
+            </label>
+        </div>
+        <hr class="mt-5">
+        <p style="font-size: 25px; font-weight:500" >Card Information</p>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label  class="form-label">First Name</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label  class="form-label">Credit Card Number</label>
+                    <input type="number" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label  class="form-label">Last Name</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label  class="form-label">Month</label>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label  class="form-label">Year</label>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label  class="form-label">Ccv</label>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p style="font-size: 30px; font-weight:500" class="mt-5">Billing Address</p>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label  class="form-label">Address 1</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label  class="form-label">Address 2</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="mb-3">
+                    <label  class="form-label">City</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="mb-3">
+                    <label  class="form-label">State</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="mb-3">
+                    <label  class="form-label">Zip Code</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+        </div>
+        <button type="Submit" class="btn btn-success">Review Body >></button>
+    </div>
     <div class="container my-5">
       <hr>
     </div>

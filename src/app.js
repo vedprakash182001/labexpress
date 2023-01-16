@@ -38,6 +38,7 @@ app.get("/memberLogin",(req,res)=>{
     res.render("memberLogin");
 })
 
+
 app.get("/forgotPassword",(req,res)=>{
     res.render("forgotPassword")
 })
