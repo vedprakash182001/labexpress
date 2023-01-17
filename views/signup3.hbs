@@ -56,11 +56,11 @@
         <form action="/signup3" method="post">
             
             <div>
-                <div>
+                <div id="newdriver">
                     <div class="row mt-2">
                         <div class="col-md-3">
                             <div class="mb-3">
-                                <input type="text" class="form-control"   placeholder="First Name">
+                                <input type="text" class="form-control"   placeholder="First Name" value="">
                             </div>
                         </div>
                         <div class="col-md-3">
@@ -102,9 +102,10 @@
     {{>footer}}
     {{>script}}
     <script>
+        
         function makeNewDriver(a){
-            var par = a.parentNode.children[0];
-            const node = `<div class="row mt-2">
+            document.getElementById("newdriver").insertAdjacentHTML("beforeend",
+                `<div class="row mt-2">
                     <div class="col-md-3">
                         <div class="mb-3">
                             <input type="text" class="form-control"   placeholder="First Name">
@@ -133,10 +134,8 @@
                     <div class="col-md-1">
                         <button type="button" class="btn btn-danger" onclick="deleteDriver(this)">x</button>
                     </div>
-                </div>`
-            par.innerHTML+=node;
+                </div>`);
         }
-
         function deleteDriver(a){
             var par = a.parentNode.parentNode;
             par.remove();
