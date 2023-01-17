@@ -139,14 +139,12 @@ app.get("/signup2",(req,res)=>{
 
 app.post("/signup2",async(req,res)=>{
     try {
-        console.log(req.body)
         const data = await User.findByIdAndUpdate(id,{
             membership :{
                 plan : req.body.plan,
                 quanity : req.body.quantity,
             }
-        }) 
-        console.log(data);
+        })
         data.save();
         res.redirect("signup3")
     } catch (err) {
@@ -157,14 +155,61 @@ app.post("/signup2",async(req,res)=>{
 
 //************************* Signup3  ********************************/
 
-app.get("/signup3",(req,res)=>{
+app.get("/signup3",async(req,res)=>{
     res.render("signup3",{
         status:status
     })
 })
 
-app.post("/signup3",(req,res)=>{
-    res.redirect("signup4")
+app.post("/signup3",async(req,res)=>{
+   try {
+        if(typeof(req.body.fname)=="string"){
+            // const data = await User.updateOne(
+            //     { _id: id },
+            //     { $push: { driver: {
+            //         firstname : req.body.fname,
+            //         lastname : req.body.lname,
+            //         ssn : req.body.ssn,
+            //         cdlstate : req.body.cdlstate,
+            //         cdlnumber : req.body.dlnumber,
+            //     }} }
+            // )
+            // data.save();
+            const temp = await User.findOneAndUpdate(
+                { _id: id}, 
+                { $push: { driver: {
+                    firstname : req.body.fname,
+                    lastname : req.body.lname,
+                    ssn : req.body.ssn,
+                    cdlstate : req.body.cdlstate,
+                    cdlnumber : req.body.dlnumber,
+                 } } },
+                {
+                    new:true
+                });
+        }else{
+            var x = (req.body.fname).length;
+            var temp = 0;
+            while(x--){
+                const temp1 = await User.findOneAndUpdate(
+                { _id: id}, 
+                { $push: { driver: {
+                    firstname : (req.body.fname)[temp],
+                    lastname : (req.body.lname)[temp],
+                    ssn : (req.body.ssn)[temp],
+                    cdlstate : (req.body.cdlstate)[temp],
+                    cdlnumber : (req.body.dlnumber)[temp],
+                    } } },
+                {
+                    new:true
+                });
+                temp++;
+            }
+        }
+        res.redirect("signup4")
+   } catch (err) {
+        res.send(err)
+   }
 })
 
 

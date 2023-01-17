@@ -11,9 +11,15 @@
                     <h3 >Unlimited Number of Drivers</h3>
                     <h1 class="mt-3">DOT Compliant Instantly!</h1>
                     <h3>Enrollment Certificate Emailed Immediately</h3>
-                    <form action="/signup1" method="get">
-                        <button type="submit" class="btn btn-primary mt-5">JOIN THE DOT CONSORTIUM NOW</button>
-                    </form>
+                    {{#if status}}
+                        <form action="/signup2" method="get">
+                            <button type="submit" class="btn btn-success">Join the DOT Consortium</button>
+                        </form>
+                    {{else}}
+                        <form action="/signup1" method="get">
+                            <button type="submit" class="btn btn-success">Join the DOT Consortium</button>
+                        </form>
+                    {{/if}}
                     <h2 class="my-4"><b>Or Call: 800-341-1185</b></h2>
                     <div class="home5">
                         <p style="margin-bottom: 0px;">FIND COLLECTION SITES NEAR YOU</p>
