@@ -49,79 +49,81 @@
         </div>
         <hr class="mt-5">
         <p style="font-size: 25px; font-weight:500" >Card Information</p>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="mb-3">
-                    <label  class="form-label">First Name</label>
-                    <input type="text" class="form-control">
-                </div>
-                <div class="mb-3">
-                    <label  class="form-label">Credit Card Number</label>
-                    <input type="number" class="form-control">
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="mb-3">
-                    <label  class="form-label">Last Name</label>
-                    <input type="text" class="form-control">
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="mb-3">
-                            <label  class="form-label">Month</label>
-                            <input type="text" class="form-control">
-                        </div>
+       <form action="/signup4" method="post">
+             <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label  class="form-label">First Name</label>
+                        <input type="text" class="form-control" name="fname">
                     </div>
-                    <div class="col-md-4">
-                        <div class="mb-3">
-                            <label  class="form-label">Year</label>
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="mb-3">
-                            <label  class="form-label">Ccv</label>
-                            <input type="text" class="form-control">
-                        </div>
+                    <div class="mb-3">
+                        <label  class="form-label">Credit Card Number</label>
+                        <input type="number" class="form-control" name="ccnumber">
                     </div>
                 </div>
-            </div>
-        </div>
-        <hr>
-        <p style="font-size: 30px; font-weight:500" class="mt-5">Billing Address</p>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="mb-3">
-                    <label  class="form-label">Address 1</label>
-                    <input type="text" class="form-control">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label  class="form-label">Last Name</label>
+                        <input type="text" class="form-control" name="lname">
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label  class="form-label">Month</label>
+                                <input type="number" class="form-control" name="month" >
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label  class="form-label">Year</label>
+                                <input type="number" class="form-control" name="year">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label  class="form-label">Ccv</label>
+                                <input type="number" class="form-control" name="ccv">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="mb-3">
-                    <label  class="form-label">Address 2</label>
-                    <input type="text" class="form-control">
+            <hr>
+            <p style="font-size: 30px; font-weight:500" class="mt-5">Billing Address</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label  class="form-label">Address 1</label>
+                        <input type="text" class="form-control" name="address1">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label  class="form-label">Address 2</label>
+                        <input type="text" class="form-control" name="address2">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label  class="form-label">City</label>
+                        <input type="text" class="form-control" name="city">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label  class="form-label">State</label>
+                        <input type="text" class="form-control" name="state">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label  class="form-label">Zip Code</label>
+                        <input type="text" class="form-control" name="zipcode">
+                    </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="mb-3">
-                    <label  class="form-label">City</label>
-                    <input type="text" class="form-control">
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="mb-3">
-                    <label  class="form-label">State</label>
-                    <input type="text" class="form-control">
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="mb-3">
-                    <label  class="form-label">Zip Code</label>
-                    <input type="text" class="form-control">
-                </div>
-            </div>
-        </div>
-        <button type="Submit" class="btn btn-success">Review Body >></button>
+            <button type="Submit" class="btn btn-success">Review Body >></button>
+       </form>
     </div>
     <div class="container my-5">
       <hr>

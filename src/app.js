@@ -50,10 +50,34 @@ app.get("/testimonials",(req,res)=>{
     });
 })
 
+
+//********************************** Login ********************************/
 app.get("/memberLogin",(req,res)=>{
     res.render("memberLogin",{
-        status:status
+        status:status,
+        error : false
     });
+})
+
+app.post("/memberLogin",async (req,res)=>{
+    try {
+        const email = req.body.email;
+        const password = req.body.password;
+        const data = await User.findOne({email:email})
+        const dbpassword = data.password;
+        if(dbpassword==password){
+            id = data._id;
+            status = true;
+            res.redirect("/")
+        }else{
+            res.render("memberLogin",{
+                status: status,
+                error : true
+            })
+        }
+    } catch (err) {
+        res.send(err)
+    }
 })
 
 
@@ -98,8 +122,7 @@ app.post("/signup1",async(req,res)=>{
         data.save();
         status = true;
         const temp = await  User.findOne({email : z.email});
-        console.log(temp);
-        console.log(temp._id)
+        id = temp._id
         res.redirect("signup2");
     }catch(err){
         res.send(err);
@@ -114,8 +137,21 @@ app.get("/signup2",(req,res)=>{
     })
 })
 
-app.post("/signup2",(req,res)=>{
-    res.redirect("signup3")
+app.post("/signup2",async(req,res)=>{
+    try {
+        console.log(req.body)
+        const data = await User.findByIdAndUpdate(id,{
+            membership :{
+                plan : req.body.plan,
+                quanity : req.body.quantity,
+            }
+        }) 
+        console.log(data);
+        data.save();
+        res.redirect("signup3")
+    } catch (err) {
+        res.send(err)
+    }
 })
 
 
@@ -138,6 +174,42 @@ app.get("/signup4",(req,res)=>{
         status:status
     })
 })
+
+app.post("/signup4", async (req,res)=>{
+    try {
+        const z = req.body;
+        const data = await User.findByIdAndUpdate(id,{
+            payment :{
+                firstname : z.fname,
+                lastname : z.lname,
+                creditcard : z.ccnumber,
+                month : z.month,
+                year : z.year,
+                ccv : z.ccv,
+            },
+            billingaddress :{
+                address1 : z.address1,
+                address2 : z.address2,
+                city :z.city,
+                state : z.state,
+                zipcode : z.zipcode
+              }
+        })
+        data.save();
+        res.redirect("signup5")
+    } catch (err) {
+        res.send(err);
+    }
+})
+
+//************************ Signup5 ***********************************/
+app.get("/signup5",(req,res)=>{
+    res.render("signup5",{
+        status:status
+    })
+})
+
+
 
 app.get("/logout",(req,res)=>{
     status = false;
