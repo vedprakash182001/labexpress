@@ -8,9 +8,15 @@
             </div>
         </div>
         <div class="member-box " style="text-align: right;">
-            <form action="/login" method="get">
-                <button type="button" class="btn btn-success">Member Login</button>
-            </form>
+            {{#if status}}
+                <form action="/account" method="get">
+                    <button type="submit" class="btn btn-success">Account</button>
+                </form>
+            {{else}}
+                <form action="/memberLogin" method="get">
+                    <button type="submit" class="btn btn-success">Member Login</button>
+                </form>
+            {{/if}}
             <p style="margin-bottom: 0px;">986574865655</p>
             <a href="mailto:vedprakash182001@gmail.com">vedprakash182001@gmail.com</a>
 
@@ -36,12 +42,18 @@
     <li class="nav-item">
         <a class="nav-link"style="color: blue;" href="/testimonials">Testimonials</a>
     </li>
-    <li class="nav-item">
-        <a class="nav-link"style="color: blue;" href="/signup1">Sign Up</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" style="color: blue;" href="/memberLogin">Member Login</a>
-    </li>
+    {{#if status}}
+       <li class="nav-item">
+            <a class="nav-link"style="color: blue;" href="/logout">logout</a>
+        </li>
+    {{else}}
+         <li class="nav-item">
+            <a class="nav-link"style="color: blue;" href="/signup1">Sign Up</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" style="color: blue;" href="/memberLogin">Member Login</a>
+        </li>
+    {{/if}}
     </ul>
 </div>
 </nav>

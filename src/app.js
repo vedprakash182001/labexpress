@@ -16,39 +16,59 @@ app.set("view engine","hbs")
 app.set("views","views")
 hbs.registerPartials("views/partials")
 
+
+var id = "888";
+var status = false;
+
 app.get("",(req,res)=>{
-    res.render("index")
+    res.render("index",{
+        status : status
+    })
 })
 
 app.get("/about",(req,res)=>{
-    res.render("about")
+    res.render("about",{
+        status:status
+    })
 })
 
 app.get("/contact",(req,res)=>{
-    res.render("contact")
+    res.render("contact",{
+        status:status
+    })
 })
 
 app.get("/frequentlyAskedQuestions",(req,res)=>{
-    res.render("frequentlyAskedQuestions");
+    res.render("frequentlyAskedQuestions",{
+        status:status
+    });
 })
 
 app.get("/testimonials",(req,res)=>{
-    res.render("testimonials");
+    res.render("testimonials",{
+        status:status
+    });
 })
 
 app.get("/memberLogin",(req,res)=>{
-    res.render("memberLogin");
+    res.render("memberLogin",{
+        status:status
+    });
 })
 
 
 app.get("/forgotPassword",(req,res)=>{
-    res.render("forgotPassword")
+    res.render("forgotPassword",{
+        status:status
+    })
 })
 
 // **************************  signup1  *****************************
 
 app.get("/signup1",(req,res)=>{
-    res.render("signup1")
+    res.render("signup1",{
+        status:status
+    })
 })
 
 app.post("/signup1",async(req,res)=>{
@@ -76,6 +96,10 @@ app.post("/signup1",async(req,res)=>{
             }
         })
         data.save();
+        status = true;
+        const temp = await  User.findOne({email : z.email});
+        console.log(temp);
+        console.log(temp._id)
         res.redirect("signup2");
     }catch(err){
         res.send(err);
@@ -85,7 +109,9 @@ app.post("/signup1",async(req,res)=>{
 // ************************* Signup2  ******************************
 
 app.get("/signup2",(req,res)=>{
-    res.render("signup2")
+    res.render("signup2",{
+        status:status
+    })
 })
 
 app.post("/signup2",(req,res)=>{
@@ -96,7 +122,9 @@ app.post("/signup2",(req,res)=>{
 //************************* Signup3  ********************************/
 
 app.get("/signup3",(req,res)=>{
-    res.render("signup3")
+    res.render("signup3",{
+        status:status
+    })
 })
 
 app.post("/signup3",(req,res)=>{
@@ -106,7 +134,15 @@ app.post("/signup3",(req,res)=>{
 
 //************************ Signup4 ***********************************/
 app.get("/signup4",(req,res)=>{
-    res.render("signup4")
+    res.render("signup4",{
+        status:status
+    })
+})
+
+app.get("/logout",(req,res)=>{
+    status = false;
+    id = "sdsd";
+    res.redirect("/")
 })
 
 app.listen(port,()=>{

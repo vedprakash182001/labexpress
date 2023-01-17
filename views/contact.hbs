@@ -25,9 +25,15 @@
                     <hr>
                     <p>Only</p>
                     <p style="font-weight: 500;  font-size:25px">$99 for 1 Year</p>
-                    <form action="/signup1" method="get">
-                        <button type="submit" class="btn btn-success">Join the DOT Consortium</button>
-                    </form>
+                    {{#if status}}
+                        <form action="/signup2" method="get">
+                            <button type="submit" class="btn btn-success">Join the DOT Consortium</button>
+                        </form>
+                    {{else}}
+                        <form action="/signup1" method="get">
+                            <button type="submit" class="btn btn-success">Join the DOT Consortium</button>
+                        </form>
+                    {{/if}}
                 </div>
             </div>
         </div>
