@@ -3,6 +3,7 @@ const app = express();
 const port = process.send.PORT|8000
 const bodyParser = require("body-parser");
 const hbs = require("hbs");
+require('dotenv').config();
 require("./models/database")
 const User = require("./models/user")
 
