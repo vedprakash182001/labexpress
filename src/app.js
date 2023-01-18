@@ -164,17 +164,6 @@ app.get("/signup3",async(req,res)=>{
 app.post("/signup3",async(req,res)=>{
    try {
         if(typeof(req.body.fname)=="string"){
-            // const data = await User.updateOne(
-            //     { _id: id },
-            //     { $push: { driver: {
-            //         firstname : req.body.fname,
-            //         lastname : req.body.lname,
-            //         ssn : req.body.ssn,
-            //         cdlstate : req.body.cdlstate,
-            //         cdlnumber : req.body.dlnumber,
-            //     }} }
-            // )
-            // data.save();
             const temp = await User.findOneAndUpdate(
                 { _id: id}, 
                 { $push: { driver: {
@@ -254,6 +243,17 @@ app.get("/signup5",(req,res)=>{
     })
 })
 
+
+//*************************** Account *********************************/
+app.get("/account",async (req,res)=>{
+    try {
+        res.render("account.hbs",{
+            status :status
+        });
+    } catch (err) {
+        console.log(err)
+    }
+})
 
 
 app.get("/logout",(req,res)=>{

@@ -47,13 +47,13 @@
         <p style="font-size: 25px; margin-bottom:0px">Primary Contact Person</p>
         <p>Designated Employee Representative (DER)</p>
         <hr>
-        <p style="font-size: 12px;" >* Denotes required field</p>
+        <p style="font-size: 12px;" ><b style="color: red;">*</b> Denotes required field</p>
         <form action="/signup1" method="post">
             <div class="row">
                 <div class="col-md-6">
                     <div class="mb-3">
-                        <label class="form-label">First Name</label>
-                        <input type="text" class="form-control" name="fname">
+                        <label class="form-label">First Name <b style="color: red;">*</b></label>
+                        <input type="text" class="form-control" name="fname" required>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
@@ -70,30 +70,30 @@
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label  class="form-label">New Password</label>
-                        <input type="password" class="form-control" name="password">
+                        <label  class="form-label">New Password <b style="color: red;">*</b></label>
+                        <input type="password" class="form-control" name="password" required>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="mb-3">
-                        <label  class="form-label">Last Name</label>
+                        <label  class="form-label">Last Name <b style="color: red;">*</b></label required>
                         <input type="text" class="form-control" name="lname">
                     </div>
                     <div class="mb-3">
-                        <label  class="form-label">Email</label>
-                        <input type="email" class="form-control" name="email" >
+                        <label  class="form-label">Email <b style="color: red;">*</b></label>
+                        <input type="email" class="form-control" name="email" required >
                     </div>
                     <div class="mb-3">
-                        <label  class="form-label">Confirm Password</label>
-                        <input type="password" class="form-control" name="cpassword">
+                        <label  class="form-label">Confirm Password <b style="color: red;">*</b></label>
+                        <input type="password" class="form-control" name="cpassword" required>
                     </div>
                 </div>
             </div>
             <p class="mt-5" style="font-size: 30px;" >Company Information</p>
             <hr>
             <div class="mb-3">
-                <label  class="form-label">Company Name</label>
-                <input type="text" class="form-control" name="cname">
+                <label  class="form-label">Company Name <b style="color: red;">*</b></label>
+                <input type="text" class="form-control" name="cname" required>
             </div>
             <div class="row">
                 <div class="col-md-6">
@@ -106,8 +106,8 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="mb-3">
-                        <label  class="form-label">Phone</label>
-                        <input type="number" class="form-control" name="cphone">
+                        <label  class="form-label">Phone <b style="color: red;">*</b></label>
+                        <input type="number" class="form-control" name="cphone" required>
                     </div>
                     <div class="mb-3">
                         <label  class="form-label">Address 1 (May not be P.O. Box Addresses)</label>
@@ -128,8 +128,8 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="mb-3">
-                        <label  class="form-label">City</label>
-                        <input type="text" class="form-control"name="city">
+                        <label  class="form-label">City <b style="color: red;">*</b></label>
+                        <input type="text" class="form-control"name="city" required>
                     </div>
                     <div class="mb-3">
                         <label  class="form-label">Referred By (optional)</label>
@@ -138,14 +138,14 @@
                 </div>
                 <div class="col-md-4">
                     <div class="mb-3">
-                        <label  class="form-label">State</label>
-                        <input type="text" class="form-control" name="state" >
+                        <label  class="form-label">State <b style="color: red;">*</b></label>
+                        <input type="text" class="form-control" name="state" required >
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="mb-3">
-                        <label  class="form-label">Zip Code</label>
-                        <input type="text" class="form-control" name="zipcode">
+                        <label  class="form-label">Zip Code <b style="color: red;">*</b></label>
+                        <input type="text" class="form-control" name="zipcode" required>
                     </div>
                 </div>
             </div>

@@ -198,3 +198,58 @@
     font-size: 30px;
     font-weight: 500;
 }
+
+
+/* ****************************** Account ********************************/
+.acc1{
+    margin-top: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2685e3;
+    height: 40px;
+}
+.acc2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 14.2%;
+}
+.acc2 a{
+    color: white;
+}
+.accb1{
+    display: flex;
+    align-items: center;
+    border-radius: 5px 5px 0px 0px;
+    border: 1px solid rgb(181, 181, 181);
+    height: 45px;
+    padding-left: 10px;
+
+}
+.accb2{
+    display: flex;
+    align-items: center;
+    border: 1px solid rgb(181, 181, 181);
+    height: 45px;
+    padding-left: 10px;
+
+}
+.accb3{
+    display: flex;
+    align-items: center;
+    border: 1px solid rgb(181, 181, 181);
+    height: 45px;
+    padding-left: 10px;
+
+}
+.accb4{
+    display: flex;
+    align-items: center;
+    border-radius: 0px 0px 5px 5px;
+    border: 1px solid rgb(181, 181, 181);
+    height: 45px;
+    padding-left: 10px;
+
+}
